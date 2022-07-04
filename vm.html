@@ -29,24 +29,29 @@
                     font-family: Open Sans;
                 }
 
-                body {
-                    background-color: #313131;
-                }
-
                 .this-spacing-is-pissing-me-off {
                   margin: 12px;
                 }
 
-                .light-text {
-                    /* Kind of a fucky way to do it but why not */
-                    color: #ffffff;
+                canvas {
+                  position:fixed;
+	                top:50%;
+	                left:50%;
+	                transform:translate(-50%,-50%);
+                }
+
+                .letmetouchurpenis {
+                  position:fixed;
+	                top:50%;
+	                left:50%;
+	                transform:translate(-50%,-50%);
                 }
             </style>
         </head>
 
         <body>
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#">CollabVM</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,13 +65,17 @@
                       <a class="nav-link" href="#" title="Discord"><i class="fa-brands fa-discord"></i></a>
                       <a class="nav-link" href="#" title="Reddit"><i class="fa-brands fa-reddit"></i></a>
                       <a class="nav-link" href="#" title="Login"><i class="fa-solid fa-user"></i></a>
+                      
                     </div>
                   </div>
                 </div>
               </nav>
-
-              <div class="this-spacing-is-pissing-me-off">
-                <p><i class="fa-solid fa-gauge"></i> <span id="fps"></span> FPS | <i class="fa-solid fa-computer"></i> testvm | <i class="fa-solid fa-server"></i> 104.192.2.35:6001 <div id="connectionstatus"><i class="fa-solid fa-circle-question"></i> Waiting for a connection status</p></div>
+            <div class="this-spacing-is-pissing-me-off">
+              <p>
+              <i class="fa-solid fa-gauge"></i> <span id="fps"></span> FPS
+              <div id="vmname"><i class="fa-solid fa-computer"></i> testvm</div>
+              <div id="server"><i class="fa-solid fa-server"></i> 104.192.2.35:6001</div> 
+              <div id="connectionstatus"><i class="fa-solid fa-circle-xmark"></i> Disconnected</p></div>
               <button type="button" class="btn btn-primary letmetouchurpenis disabled">Please wait, vnc is loading</button>
               <canvas tabindex="1"></canvas>
               <script>
@@ -75,13 +84,10 @@
                 ctx=vm.getContext("2d")
                 
                 const ws = new WebSocket("ws://104.192.2.35:6001");
+                document.getElementById("server").innerHTML = "<i class='fa-solid fa-server'></i> 104.192.2.35"; 
                 ws.addEventListener("open", () => {
                         console.log("good shit");
                         document.getElementById("connectionstatus").innerHTML = "<i class='fa-solid fa-circle-check'></i> Connected"; 
-                });
-                ws.addEventListener("onclose", () => {
-                        console.log("bad shit");
-                        document.getElementById("connectionstatus").innerHTML = "<i class='fa-solid fa-circle-xmark'></i> Disconnected"; 
                 });
                 var fps = 0;
                 var fpsCount = document.getElementById('fps');

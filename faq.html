@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head> 
+            <title>Control Collaborative Virtual Machines!</title>
+
+            <!-- favicon -->
+            <link rel="icon" href="favicon.ico">
+
+            <!-- all this meta bullshit in -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <!-- fontawesome "kit" whatever the fuck that means !-->
+            <script src="https://kit.fontawesome.com/66617889d6.js" crossorigin="anonymous"></script>
+
+            <!-- fonts -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Fira+Mono&family=Nunito+Sans:wght@200&family=Open+Sans:wght@300&family=Ropa+Sans&family=Source+Code+Pro:wght@200&family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
+            
+            <!-- loading bootstrap -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+            <!-- just a few touchups -->
+            <style>
+                * {
+                    font-family: Open Sans;
+                }
+
+                .this-spacing-is-pissing-me-off {
+                  margin: 12px;
+                }
+            </style>
+        </head>
+
+        <body>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">CollabVM</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                      <a class="nav-link" aria-current="page" href="#" title="Home"><i class="fa-solid fa-house"></i></a>
+                      <a class="nav-link active" href="#" title="FAQ"><i class="fa-solid fa-question"></i></a>
+                      <a class="nav-link" href="#" title="Rules"><i class="fa-solid fa-align-left"></i></a>
+                      <a class="nav-link" href="#" title="Discord"><i class="fa-brands fa-discord"></i></a>
+                      <a class="nav-link" href="#" title="Reddit"><i class="fa-brands fa-reddit"></i></a>
+                      <a class="nav-link" href="#" title="Login"><i class="fa-solid fa-user"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            <div class="this-spacing-is-pissing-me-off">
+                <center>
+                    <h1>- FAQ -</h1>
+                    <p><b>F</b>requently <b>A</b>sked <b>Q</b>uestions for CollabVM.</p>
+
+                    <h3>Q. What is CollabVM?</h3>
+                    <p>CollabVM is a website where you can control a computer (virtual machine) from your web browser with strangers. Everybody can click on the screen and request an 18 second turn.</p>
+
+                    <h3>Q. How do I use it?</h3>
+                    <p>Select a machine from the home page, then click on the screen and wait for your turn. If you are waiting for a turn, a counter will be shown on the bottom of the display, showing how much longer you'll have to wait. If nobody has a turn, you'll be given one immediately.</p>
+
+                    <h3>Q. The machine is destroyed, really slow, or won't boot up anymore, what do I do?</h3>
+                    <p>If the machine does not start or is destroyed, you should click the "Vote for Reset" button which will start a reset to restore the machine to a clean state. If the Vote Reset button is not there or it isn't working, please contact the admins on our Discord or via e-mail (link below)</p>
+
+                    <h3>Q. Some names have a blue/yellow background, what does that mean?</h3>
+                    <p>If a user has a blue background, that means they have a turn. If they have a yellow one, they are in the queue and are waiting for one. If they don't have one, they aren't taking or waiting for a turn</p>
+
+                    <h3>Q. I get a message saying the VMs couldn't be loaded, what can I do?</h3>
+                    <p>First, please make sure you have JavaScript enabled and don't have the following extensions enabled:
+                      - NoScript
+                      - uMatrix
+                      - Ghostery (known to affect certain users)
+                      If you have them installed, make an exception for CollabVM and refresh.
+                      If you are using Tor, a VPN, or a proxy, CollabVM has these blocked to prevent abuse. Try turning them off and try again.</p>
+
+                    <h3>Q. There's a login screen, what's the password?</h3>
+                    <p>The Windows machines do not have a password. If there is one, somebody else put it there. Start a vote reset if you can't login.
+                      The Linux machine (VM 3) does have a login screen. The "dartz" user does not have a password, while "user"s password is "user" (without quotes).</p>
+
+                    <h3>Q. How can I contact the admins?</h3>
+                    <p>The fastest and easiest way to contact the admins is to join our Discord server and DM or ping one of them.
+
+                      Alternatively, you may contact us at changethis@mail.address. </p>
+
+                    <h3>Q. Some names are red or green, what does it mean?</h3>
+                    <p>A user with a red name is an Administrator, while a user with a green name is a Moderator. A standard user does not have any color.</p>
+
+                    <h3>Q. Somebody's breaking the rules! How can I report them?</h3>
+                    <p>Please e-mail us or join our Discord if you would like to report somebody who is breaking the rule</p>
+
+                    <h3>Q. The keyboard is not accepting input or is opening shortcuts!</h3>
+                    <p>Take a turn, and when you have a turn, press the CTRL, ALT, and Windows keys. This should unstick the keys.</p>
+
+                    <h3>Q. Can I run viruses?</h3>
+                    <p>You can run whatever programs you want, including viruses, trojans, etc, as long as it doesn't break any of our rules.</p>
+                </center>
+            </div>
+        </body>
+</html>
